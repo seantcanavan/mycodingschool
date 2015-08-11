@@ -11,7 +11,7 @@ class DynamicListAsArray:
     def __init__(self):
         self.content = [-1 for x in range(self.STARTING_SIZE)]
         print("initialized")
-        self.print_contents()
+        self.print()
 
     def get(self):
         """O(1)"""
@@ -23,28 +23,28 @@ class DynamicListAsArray:
             pos = self.position + 1
         return self.content[pos]
 
-    def insert(self, val):
+    def add(self, val):
         """O(N) worst case on resize"""
-        self.grow_array()
+        self.grow()
         self.position += 1
         self.content[self.position] = val
-        self.print_contents()
+        self.print()
 
-    def insert_at(self, val, pos):
+    def add_at(self, val, pos):
         """O(N) worst case on resize"""
-        self.grow_array()
+        self.grow()
         if pos > self.position + 1:
             pos = self.position + 1
         self.content[pos] = val
         self.position += 1
-        self.print_contents()
+        self.print()
 
     def remove(self):
         """O(N) worst case on resize"""
         if self.position != -1:
             self.position -= 1
-            self.shrink_array()
-            self.print_contents()
+            self.shrink()
+            self.print()
         else:
             print("can't remove. nothing to remove")
 
@@ -53,22 +53,22 @@ class DynamicListAsArray:
         if self.position == -1:
             print("can't remove. nothing to remove")
         else:
-            self.shrink_array()
+            self.shrink()
             if pos > self.position + 1:
                 pos = self.position + 1
             for x in range(pos, len(self.content) -1):
                 self.content[x] = self.content[x+1]
             self.position -= 1
-            self.print_contents()
+            self.print()
 
     def reset(self):
-        """O(N) to rebuilt the array"""
+        """O(N) to rebuild the array"""
         self.content = [-1 for x in range(0, 10)]
         self.position = -1
         print("reset")
-        self.print_contents()
+        self.print()
 
-    def print_contents(self):
+    def print(self):
         len_string = "{" + str(len(self.content)) + "}"
         content_string = ""
         for x in range(0, len(self.content)):
@@ -79,14 +79,14 @@ class DynamicListAsArray:
             content_string += "|"
         print(content_string + len_string)
 
-    def grow_array(self):
+    def grow(self):
       if self.position == len(self.content) -1:
             new_array = [-1 for x in range(len(self.content) * self.GROWTH_FACTOR)]
             for x in range(0, len(self.content)):
                 new_array[x] = self.content[x]
             self.content = new_array
 
-    def shrink_array(self):
+    def shrink(self):
         if (len(self.content) / self.SHRINK_FACTOR) > self.position and (len(self.content) > self.STARTING_SIZE):
             new_array = [-1 for x in range((int(len(self.content) / self.GROWTH_FACTOR)))]
             for x in range(0, len(new_array)):
