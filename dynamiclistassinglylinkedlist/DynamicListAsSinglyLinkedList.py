@@ -24,35 +24,103 @@ class DynamicListAsSinglyLinkedList:
     start = None
     size = 0
 
+    def get_len(self):
+        return self.size
+
     def add(self, val):
-        current = self.start
         new = Node()
         new.data = val
-        new.link = None
-        if current is None:
+        if self.size == 0:
             self.start = new
-        else:
-            while current.link is not None : # check for 2+ elements
-                current = current.link
+            self.size += 1
+            return
+        current = self.start
+        while current.link is not None: # check for 2+ elements
+            current = current.link
             current.link = new
+        self.size+=1
         self.print()
+        return
+
+    def add_at(self, val, pos):
+        new = Node()
+        new.data = val
+        if self.size == 0:
+            self.start = new
+            self.size += 1
+            return
+        if pos == 0:
+            prev = self.start
+            self.start = new
+            new.next = prev
+            return
+        if pos > self.size:
+            pos = self.size
+        count = 0
+        current = self.start
+        while count < pos:
+            prev = current
+            current = current.link
+            count += 1
+        prev.link = new
+        new.link = current
+        self.size += 1
+        self.print()
+        return
+
+    def remove(self):
+        if self.size == 0:
+            self.print()
+            return
+        if self.size == 1:
+            self.start = None
+            self.size -= 1
+            self.print()
+            return
+        current = self.start
+        while current.link is not None:
+            prev = current
+            current = current.link
+        prev.link = None
+        self.size-=1
+        self.print()
+        return
+
+    def remove_at(self, pos):
+        if self.size == 0:
+            self.print()
+            return
+        if self.size == 1:
+            self.start = None
+            self.size -= 1
+            self.print()
+            return
+        if pos > self.size:
+            pos = self.size
+        current = self.start
+        count = 0
+        while count < pos:
+            prev = current
+            current = current.link
+            count += 1
+        prev.link = current.link
+        self.size -= 1
+        self.print()
+        return
 
     def print(self):
         current = self.start
         result = ""
-        count = 0
         if current is not None:
             result += current.to_str()
-            count += 1
             result += " "
-        while current.link is not None:
+        while current is not None and current.link is not None:
             current = current.link
             result += current.to_str()
-            count += 1
             result += " "
-            if count == 10:
-                count = 0
-                result += "\n"
+        result += " len=" + str(self.size)
         print(result.strip())
 
-
+    def reset(self):
+        for x in range(self.size, 0, -1):
+            self.remove_at(x)
