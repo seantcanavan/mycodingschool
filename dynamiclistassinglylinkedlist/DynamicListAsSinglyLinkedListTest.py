@@ -42,17 +42,17 @@ class MyTestCase(unittest.TestCase):
         # linked_list.add(1)
         # linked_list.reset()
 
-        random.seed()
-        for x in range(0, 100):
-            action = random.randint(1, 4)
-            val = random.randint(1,100)
-            if action == 1 or action == 2:
-                print("removing")
-                linked_list.remove()
-            else:
-                print("adding " + str(val))
-                linked_list.add(val)
-            time.sleep(1)
+        # random.seed()
+        # for x in range(0, 100):
+        #     action = random.randint(1, 4)
+        #     val = random.randint(1,100)
+        #     if action == 1 or action == 2:
+        #         print("removing")
+        #         linked_list.remove()
+        #     else:
+        #         print("adding " + str(val))
+        #         linked_list.add(val)
+        #     time.sleep(1)
 
 
         # random.seed()
@@ -78,7 +78,21 @@ class MyTestCase(unittest.TestCase):
         # linked_list.add(54)
         # linked_list.remove_at(2)
 
+        linked_list.add_at(1, 4)
+        linked_list.add_at(2, 4)
+        linked_list.add_at(3, 4)
+        linked_list.add_at(4, 4)
+        linked_list.add_at(5, 4)
+        linked_list.add_at(6, 4)
+        linked_list.add_at(7, 4)
 
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
+        linked_list.remove_at(4)
 
 if __name__ == '__main__':
     unittest.main()

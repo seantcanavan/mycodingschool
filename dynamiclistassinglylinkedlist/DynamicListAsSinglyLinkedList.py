@@ -43,25 +43,51 @@ class DynamicListAsSinglyLinkedList:
         self.size += 1
         self.print()
 
-    def add_node(self, node1, node2, new_node):
-        if node1 is None:
-            return new_node # the list is empty
-        if node2 is None: # adding at the end, just append like add(self)
-            node1.link = new_node
-        else: # adding in the middle, we need to stitch them together
-            node1.link = new_node
-            new_node.link = node2
-        return node1
+    def add_at(self, val, pos):
+        """Add val at pos in the list. Pos is 0th based index. Worst case O(n) at the end of the list"""
+        new = Node(val)
+        if self.size == 0: # adding to an empty list
+             self.start = new
+        elif pos == 0: # adding to the beginning of the list
+            prev = self.start
+            self.start = new
+            self.start.link = prev
+        elif self.size == 1:
+            self.start.link = new
+        else:
+            count = 0
+            current = self.start
+            while (count < self.size) and (count < pos): # traverse the list to find the node where we want to add
+                prev = current
+                current = current.link
+                count += 1
+            temp = prev.link
+            prev.link = new
+            new.link = temp
+        self.size += 1
+        self.print()
 
-    def remove_node(self, node1, node2, node3):
-        if node1 is None:
-            return node1
-        if node3 is None: # removing at the end, just cut off node2
-            node1.link = None
-        else: # else we need to stitch the links together around node2 to cut it out
-            node1.link = node3
-            node2.link = None # # isolate the node for garbage collection
-        return node1
+    def remove_at(self, pos):
+        """Add Remove the value at pos in the list. Pos is 0th based index. Worst case O(n) at the end of the list"""
+        if self.size == 0:
+            return
+        elif pos == 0:
+            self.start = self.start.link
+        elif self.size == 1:
+            self.start = None
+        else:
+            current = self.start
+            count = 1 # start at one since we're initializing at one
+            while (count < self.size) and (count < pos): # traverse the list to find the node where we want to remove
+                prev = current
+                current = current.link
+                count += 1
+            temp = current
+            prev.link = current.link
+            temp.link = None
+        self.size -= 1
+        self.print()
+
 
     def remove(self):
         if self.size == 0:
