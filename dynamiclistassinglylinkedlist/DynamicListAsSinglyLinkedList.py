@@ -1,3 +1,7 @@
+#TODO reverse the list. recursion?
+#time complexity for this and dynamiclistasarray
+#doubly linked list
+
 __author__ = 'advoc'
 
 class Node:
