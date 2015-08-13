@@ -44,18 +44,24 @@ class DynamicListAsSinglyLinkedList:
         self.print()
 
     def add_node(self, node1, node2, new_node):
+        if node1 is None:
+            return new_node # the list is empty
         if node2 is None: # adding at the end, just append like add(self)
             node1.link = new_node
         else: # adding in the middle, we need to stitch them together
             node1.link = new_node
             new_node.link = node2
+        return node1
 
     def remove_node(self, node1, node2, node3):
+        if node1 is None:
+            return node1
         if node3 is None: # removing at the end, just cut off node2
             node1.link = None
         else: # else we need to stitch the links together around node2 to cut it out
             node1.link = node3
             node2.link = None # # isolate the node for garbage collection
+        return node1
 
     def remove(self):
         if self.size == 0:
