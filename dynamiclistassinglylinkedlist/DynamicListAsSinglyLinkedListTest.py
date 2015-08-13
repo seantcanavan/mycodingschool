@@ -41,18 +41,43 @@ class MyTestCase(unittest.TestCase):
         # linked_list.add(2)
         # linked_list.add(1)
         # linked_list.reset()
+
         random.seed()
         for x in range(0, 100):
-            pos = random.randint(0,9)
             action = random.randint(1, 4)
             val = random.randint(1,100)
             if action == 1 or action == 2:
-                print("removing at: " + str(pos))
-                linked_list.remove_at(pos)
+                print("removing")
+                linked_list.remove()
             else:
-                print("adding " + str(val) + " at: " + str(pos))
-                linked_list.add_at(val, pos)
+                print("adding " + str(val))
+                linked_list.add(val)
             time.sleep(1)
+
+
+        # random.seed()
+        # for x in range(0, 100):
+        #     pos = random.randint(0,9)
+        #     action = random.randint(1, 4)
+        #     val = random.randint(1,100)
+        #     if action == 1 or action == 2:
+        #         print("removing at: " + str(pos))
+        #         linked_list.remove_at(pos)
+        #     else:
+        #         print("adding " + str(val) + " at: " + str(pos))
+        #         linked_list.add_at(val, pos)
+        #     time.sleep(1)
+
+        #[70, ->] [29, ->] [53, ->] [64, ->] [54]  len=5
+        #removing at: 2
+        #
+        # linked_list.add(70)
+        # linked_list.add(29)
+        # linked_list.add(53)
+        # linked_list.add(64)
+        # linked_list.add(54)
+        # linked_list.remove_at(2)
+
 
 
 if __name__ == '__main__':
