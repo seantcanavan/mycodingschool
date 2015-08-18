@@ -11,7 +11,6 @@ class DynamicListAsArray:
     def __init__(self):
         self.content = [-1 for x in range(self.STARTING_SIZE)]
         print("initialized")
-        self.print()
 
     def get(self):
         """O(1)"""
@@ -28,7 +27,6 @@ class DynamicListAsArray:
         self.grow()
         self.position += 1
         self.content[self.position] = val
-        self.print()
 
     def add_at(self, val, pos):
         """O(N) worst case on resize"""
@@ -37,14 +35,12 @@ class DynamicListAsArray:
             pos = self.position + 1
         self.content[pos] = val
         self.position += 1
-        self.print()
 
     def remove(self):
         """O(N) worst case on resize"""
         if self.position != -1:
             self.position -= 1
             self.shrink()
-            self.print()
         else:
             print("can't remove. nothing to remove")
 
@@ -59,16 +55,14 @@ class DynamicListAsArray:
             for x in range(pos, len(self.content) -1):
                 self.content[x] = self.content[x+1]
             self.position -= 1
-            self.print()
 
     def reset(self):
         """O(N) to rebuild the array"""
         self.content = [-1 for x in range(0, 10)]
         self.position = -1
         print("reset")
-        self.print()
 
-    def print(self):
+    def print_self(self):
         len_string = "{" + str(len(self.content)) + "}"
         content_string = ""
         for x in range(0, len(self.content)):

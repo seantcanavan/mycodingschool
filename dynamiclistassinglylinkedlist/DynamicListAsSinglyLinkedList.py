@@ -45,7 +45,6 @@ class DynamicListAsSinglyLinkedList:
         else:
             current.link = new
         self.size += 1
-        self.print()
 
     def add_at(self, val, pos):
         """Add val at pos in the list. Pos is 0th based index. Worst case O(n) at the end of the list"""
@@ -69,7 +68,6 @@ class DynamicListAsSinglyLinkedList:
             prev.link = new
             new.link = temp
         self.size += 1
-        self.print()
 
     def remove_at(self, pos):
         """Add Remove the value at pos in the list. Pos is 0th based index. Worst case O(n) at the end of the list"""
@@ -90,17 +88,13 @@ class DynamicListAsSinglyLinkedList:
             prev.link = current.link
             temp.link = None
         self.size -= 1
-        self.print()
-
 
     def remove(self):
         if self.size == 0:
-            self.print()
             return
         if self.size == 1:
             self.start = None
             self.size -= 1
-            self.print()
             return
         current = self.start
         while current.link is not None:
@@ -108,9 +102,20 @@ class DynamicListAsSinglyLinkedList:
             current = current.link
         prev.link = None
         self.size -= 1
-        self.print()
 
-    def print(self):
+    def get_last(self):
+        current = self.start
+        while current is not None:
+            current = current.next
+        return current
+
+    def get_last_value(self):
+        current = self.start
+        while current is not None:
+            current = current.next
+        return current.data
+
+    def print_self(self):
         current = self.start
         result = ""
         if current is not None:
