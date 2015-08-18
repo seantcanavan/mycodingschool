@@ -32,6 +32,10 @@ class DynamicListAsSinglyLinkedList:
     start = None
     size = 0
 
+    def __init__(self):
+        self.start = None
+        self.size = 0
+
     def get_len(self):
         return self.size
 

@@ -3,7 +3,7 @@ __author__ = 'advoc'
 import dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList
 
 class StackAsLinkedList:
-    values = dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList()
+    values = DynamicListAsSinglyLinkedList()
     size = 0
 
     def __init__(self):
