@@ -1,8 +1,5 @@
-#TODO reverse the list. recursion?
-#time complexity for this and dynamiclistasarray
-#doubly linked list
-
 __author__ = 'advoc'
+
 
 class Node:
     data = None
@@ -27,6 +24,7 @@ class Node:
             return "[" + str(self.data) + "]"
         else:
             return "[" + str(self.data) + ", " + "->" + "]"
+
 
 class DynamicListAsSinglyLinkedList:
     start = None
@@ -106,6 +104,7 @@ class DynamicListAsSinglyLinkedList:
             current = current.link
         prev.link = None
         self.size -= 1
+        return current.data
 
     def get_last(self):
         current = self.start

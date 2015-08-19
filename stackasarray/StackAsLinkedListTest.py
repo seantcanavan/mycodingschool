@@ -5,12 +5,13 @@ import StackAsLinkedList
 import time
 import random
 
+
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        stack = StackAsLinkedList()
+        stack = StackAsLinkedList.StackAsLinkedList()
         for x in range(0, 100):
-            val = random.randint(1,100)
-            if x > 50:
+            val = random.randint(1, 100)
+            if x > 10:
                 print("popped off: " + str(stack.pop()))
             else:
                 stack.push(val)

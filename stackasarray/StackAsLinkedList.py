@@ -1,13 +1,14 @@
 __author__ = 'advoc'
 
-import dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList
+import DynamicListAsSinglyLinkedList
+
 
 class StackAsLinkedList:
-    values = DynamicListAsSinglyLinkedList()
+    values = DynamicListAsSinglyLinkedList.DynamicListAsSinglyLinkedList()
     size = 0
 
     def __init__(self):
-        self.values = dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList()
+        self.values = DynamicListAsSinglyLinkedList.DynamicListAsSinglyLinkedList()
         self.size = 0
 
     def print_self(self):
@@ -17,7 +18,7 @@ class StackAsLinkedList:
         self.values.add(val)
 
     def pop(self):
-        self.values.remove()
+        return self.values.remove()
 
     def top(self):
         return self.get_last_value()
