@@ -28,6 +28,7 @@ class Node:
         if self.right is not None:
             result += "| ->"
         result += " ]"
+        return result
 
 
 class BinaryTree:
@@ -60,9 +61,10 @@ class BinaryTree:
             self.recursive_print(self.root)
 
     def recursive_print(self, tree):
-        if tree.left is None and tree.right is None:
-            tree.print()
         if tree.left is not None:
             self.recursive_print(tree.left)
         if tree.right is not None:
             self.recursive_print(tree.right)
+        tree.print()
+
+    # def breadth_first_print(self, tree):
