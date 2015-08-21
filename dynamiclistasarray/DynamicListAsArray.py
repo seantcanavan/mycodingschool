@@ -1,5 +1,6 @@
 __author__ = 'seanthomascanavan'
 
+
 class DynamicListAsArray:
     """A dynamic list ADT with array as the implementation"""
     STARTING_SIZE = 10

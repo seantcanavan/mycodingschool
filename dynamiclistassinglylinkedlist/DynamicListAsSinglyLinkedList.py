@@ -14,10 +14,7 @@ class Node:
         self.link = None
 
     def print(self):
-        if self.link is None:
-            print("[" + str(self.data) + "]")
-        else:
-            print("[" + str(self.data) + ", " + "->" + "]")
+        print(self.to_str())
 
     def to_str(self):
         if self.link is None:
@@ -51,9 +48,9 @@ class DynamicListAsSinglyLinkedList:
     def add_at(self, val, pos):
         """Add val at pos in the list. Pos is 0th based index. Worst case O(n) at the end of the list"""
         new = Node(val)
-        if self.size == 0: # adding to an empty list
-             self.start = new
-        elif pos == 0: # adding to the beginning of the list
+        if self.size == 0:  # adding to an empty list
+            self.start = new
+        elif pos == 0:  # adding to the beginning of the list
             prev = self.start
             self.start = new
             self.start.link = prev
@@ -81,8 +78,8 @@ class DynamicListAsSinglyLinkedList:
             self.start = None
         else:
             current = self.start
-            count = 1 # start at one since we're initializing at one
-            while (count < self.size) and (count < pos): # traverse the list to find the node where we want to remove
+            count = 1  # start at one since we're initializing at one
+            while (count < self.size) and (count < pos):  # traverse the list to find the node where we want to remove
                 prev = current
                 current = current.link
                 count += 1

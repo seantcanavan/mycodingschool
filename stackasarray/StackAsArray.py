@@ -18,7 +18,7 @@ class StackAsArray:
         self.size += 1
 
     def pop(self):
-        if  self.size > 0:
+        if self.size > 0:
             self.shrink()
             val = self.values[self.size - 1]
             self.size -= 1
@@ -36,7 +36,7 @@ class StackAsArray:
         return self.size == 0
 
     def grow(self):
-      if self.size == len(self.values) -1:
+        if self.size == len(self.values) -1:
             new_array = [-1 for x in range(len(self.values) * self.GROWTH_FACTOR)]
             for x in range(0, len(self.values)):
                 new_array[x] = self.values[x]
