@@ -5,42 +5,26 @@ import DynamicListAsSinglyLinkedList
 import time
 import random
 
+
 class MyTestCase(unittest.TestCase):
     def test_something(self):
         linked_list = DynamicListAsSinglyLinkedList.DynamicListAsSinglyLinkedList()
-        # linked_list.add(5)
-        # linked_list.add(10)
-        # linked_list.add(20)
-        # linked_list.add(30)
-        # linked_list.remove()
-        # linked_list.remove()
-        # linked_list.remove()
-        # linked_list.remove()
-        # linked_list.add(1)
-        # linked_list.add(2)
-        # linked_list.add(3)
-        # linked_list.add(4)
-        # linked_list.add(5)
-        # linked_list.add(6)
-        # linked_list.add(7)
-        # linked_list.add(8)
-        # linked_list.add(9)
-        # linked_list.add(10)
-        # linked_list.remove_at(5)
-        # linked_list.add_at(6, 5)
-        # linked_list.remove_at(20)
-        # linked_list.reset()
-        # linked_list.add(10)
-        # linked_list.add(9)
-        # linked_list.add(8)
-        # linked_list.add(7)
-        # linked_list.add(6)
-        # linked_list.add(5)
-        # linked_list.add(4)
-        # linked_list.add(3)
-        # linked_list.add(2)
-        # linked_list.add(1)
-        # linked_list.reset()
+
+        linked_list.add_at_end(1)
+        linked_list.add_at_end(2)
+        linked_list.add_at_end(3)
+        linked_list.add_at_end(4)
+        linked_list.add_at_end(5)
+        linked_list.add_at_end(6)
+        linked_list.add_at_end(7)
+        linked_list.add_at_end(8)
+        self.assertEquals(8, linked_list.get_end_data())
+        self.assertEquals(8, linked_list.get_size())
+        self.assertEquals(1, linked_list.get_start_data())
+
+        linked_list.add_at(9, 9)
+        self.assertEquals(9, linked_list.get_end_data())
+
 
         # random.seed()
         # for x in range(0, 100):
@@ -77,22 +61,6 @@ class MyTestCase(unittest.TestCase):
         # linked_list.add(64)
         # linked_list.add(54)
         # linked_list.remove_at(2)
-
-        linked_list.add_at(1, 4)
-        linked_list.add_at(2, 4)
-        linked_list.add_at(3, 4)
-        linked_list.add_at(4, 4)
-        linked_list.add_at(5, 4)
-        linked_list.add_at(6, 4)
-        linked_list.add_at(7, 4)
-
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
-        linked_list.remove_at(4)
 
 if __name__ == '__main__':
     unittest.main()
