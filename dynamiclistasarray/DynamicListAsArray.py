@@ -15,13 +15,30 @@ class DynamicListAsArray:
 
     def get(self):
         """O(1)"""
-        return self.content[self.position + 1]
+        return self.content[self.position]
 
     def get_at(self, pos):
         """O(1)"""
         if pos > self.position + 1:
             pos = self.position + 1
         return self.content[pos]
+
+    def get_first(self):
+        if self.position != -1:
+            return self.content[0]
+
+    def get_size(self):
+        return self.position + 1
+
+    def get_max_size(self):
+        return len(self.content)
+
+    def get_position(self):
+        return self.position
+
+    def get_end(self):
+        if self.position > -1:
+            return self.content[self.size-1]
 
     def add(self, val):
         """O(N) worst case on resize"""
@@ -42,6 +59,7 @@ class DynamicListAsArray:
         if self.position != -1:
             self.position -= 1
             self.shrink()
+            return self.content[self.position + 1]
         else:
             print("can't remove. nothing to remove")
 
@@ -75,7 +93,7 @@ class DynamicListAsArray:
         print(content_string + len_string)
 
     def grow(self):
-      if self.position == len(self.content) -1:
+        if self.position == len(self.content) -1:
             new_array = [-1 for x in range(len(self.content) * self.GROWTH_FACTOR)]
             for x in range(0, len(self.content)):
                 new_array[x] = self.content[x]
@@ -88,11 +106,5 @@ class DynamicListAsArray:
                 new_array[x] = self.content[x]
             self.content = new_array
 
-    def get_size(self):
-        return self.position + 1
-
-    def get_max_size(self):
-        return len(self.content)
-
-    def get_position(self):
-        return self.position
+    def is_empty(self):
+        return self.position == -1

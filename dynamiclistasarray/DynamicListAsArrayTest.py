@@ -4,6 +4,7 @@ import unittest
 import DynamicListAsArray
 import random
 
+
 class MyTestCase(unittest.TestCase):
     def test_something(self):
         dynamic_list = DynamicListAsArray.DynamicListAsArray()

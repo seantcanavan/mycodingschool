@@ -1,14 +1,14 @@
 __author__ = 'advoc'
 
 import unittest
-import StackAsLinkedList
+import stackaslinkedlist.StackAsLinkedList as Stack
 import time
 import random
 
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        stack = StackAsLinkedList.StackAsLinkedList()
+        stack = Stack.StackAsLinkedList()
         for x in range(0, 100):
             val = random.randint(1, 100)
             if x > 10:

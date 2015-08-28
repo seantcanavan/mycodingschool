@@ -1,16 +1,16 @@
 __author__ = 'advoc'
 
 import unittest
-import StackAsArray
+import StackAsArray as Stack
 import random
 import time
 
+
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        stack = StackAsArray.StackAsArray()
-
+        stack = Stack.StackAsArray()
         for x in range(0, 100):
-            val = random.randint(1,100)
+            val = random.randint(1, 100)
             if x > 50:
                 print("popped off: " + str(stack.pop()))
             else:

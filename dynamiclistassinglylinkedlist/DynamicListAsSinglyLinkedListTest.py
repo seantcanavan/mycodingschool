@@ -1,14 +1,14 @@
 __author__ = 'advoc'
 
 import unittest
-import DynamicListAsSinglyLinkedList
-import time
-import random
+import DynamicListAsSinglyLinkedList as LinkedList
+# import time
+# import random
 
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        linked_list = DynamicListAsSinglyLinkedList.DynamicListAsSinglyLinkedList()
+        linked_list = LinkedList.DynamicListAsSinglyLinkedList()
 
         linked_list.add_at_end(1)
         linked_list.add_at_end(2)

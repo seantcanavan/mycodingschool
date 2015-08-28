@@ -3,18 +3,18 @@ __author__ = 'advoc'
 import dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList as LinkedList
 
 
-class StackAsLinkedList:
+class QueueAsLinkedList:
     values = LinkedList.DynamicListAsSinglyLinkedList()
     size = 0
 
     def print_self(self):
         self.values.print_self()
 
-    def push(self, val):
-        self.values.add(val)
+    def enqueue(self, val):
+        self.values.add_at_end(val)
 
-    def pop(self):
-        return self.values.remove()
+    def dequeue(self):
+        return self.values.remove_at_start()
 
-    def top(self):
-        return self.get_last_value()
+    def peek(self):
+        return self.values.get_start_data()

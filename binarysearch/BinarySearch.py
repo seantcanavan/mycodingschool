@@ -3,7 +3,8 @@ __author__ = 'seancanavan'
 
 class BinarySearch:
 
-    def binary_search(self, search, val):
+    @staticmethod
+    def binary_search(search, val):
         current = search
         while len(current) > 0:
             next_index = len(current) // 2
