@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
             values.append(x)
         # pprint.pprint(values)
         bsearch = BinarySearch.BinarySearch()
-        print(bsearch.binary_search(values, 56))
+        print(bsearch.binary_array_search(values, 56))
 
 if __name__ == '__main__':
     unittest.main()
