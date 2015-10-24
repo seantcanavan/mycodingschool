@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList as LinkedList
 
 

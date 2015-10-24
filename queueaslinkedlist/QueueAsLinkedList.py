@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import dynamiclistassinglylinkedlist.DynamicListAsSinglyLinkedList as LinkedList
 
 
@@ -17,4 +15,4 @@ class QueueAsLinkedList:
         return self.values.remove_at_start()
 
     def peek(self):
-        return self.values.get_start_data()
+        return self.values.get_start()

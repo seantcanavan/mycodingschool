@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import dynamiclistasarray.DynamicListAsArray as Array
 
 

@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import components.LinkNode as Node
 
 

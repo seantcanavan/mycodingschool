@@ -1,6 +1,3 @@
-__author__ = 'advoc'
-
-
 class TreeNode:
     value = None
     left = None

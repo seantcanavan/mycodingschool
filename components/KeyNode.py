@@ -1,6 +1,3 @@
-__author__ = 'advoc'
-
-
 class KeyNode:
     """Used to store comparable values in the BinaryTree which can then point to records or values
     This adds functionality so the BinaryTree search isn't merely a true / false result but can return complex values"""

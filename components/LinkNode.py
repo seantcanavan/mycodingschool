@@ -1,6 +1,3 @@
-__author__ = 'advoc'
-
-
 class LinkNode:
     data = None
     link = None

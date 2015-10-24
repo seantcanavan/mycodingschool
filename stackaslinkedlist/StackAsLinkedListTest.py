@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import unittest
 import stackaslinkedlist.StackAsLinkedList as Stack
 import time

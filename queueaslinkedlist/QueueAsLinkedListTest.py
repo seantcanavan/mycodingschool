@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import QueueAsLinkedList as Queue
 import unittest
 

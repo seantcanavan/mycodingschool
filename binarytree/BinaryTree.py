@@ -1,6 +1,5 @@
-__author__ = 'advoc'
-
 import components.TreeNode as Node
+import queueaslinkedlist.QueueAsLinkedList as Queue
 
 
 class BinaryTree:
@@ -47,17 +46,55 @@ class BinaryTree:
                 current = current.right
         return None
 
-    def print(self):
+    def print_breadth_first(self):
         if self.root is None:
             return
         else:
-            self.recursive_print(self.root)
+            queue = Queue.QueueAsLinkedList()
+            queue.enqueue(self.root)
+            while queue.peek() is not None:
+                current_node = queue.dequeue()
+                current_node.data.print()
+                if current_node.data.left is not None:
+                    queue.enqueue(current_node.data.left)
+                if current_node.data.right is not None:
+                    queue.enqueue(current_node.data.right)
 
-    def recursive_print(self, tree):
-        if tree.left is not None:
-            self.recursive_print(tree.left)
-        if tree.right is not None:
-            self.recursive_print(tree.right)
+    def print_depth_first_post_order(self):
+        if self.root is None:
+            return
+        else:
+            self.depth_first_post_order_print(self.root)
+
+    def print_depth_first_pre_order(self):
+        if self.root is None:
+            return
+        else:
+            self.depth_first_pre_order_print(self.root)
+
+    def print_depth_first_in_order(self):
+        if self.root is None:
+            return
+        else:
+            self.depth_first_in_order_print(self.root)
+
+    def depth_first_pre_order_print(self, tree):
         tree.print()
+        if tree.left is not None:
+            self.depth_first_pre_order_print(tree.left)
+        if tree.right is not None:
+            self.depth_first_pre_order_print(tree.right)
 
-    # def breadth_first_print(self, tree):
+    def depth_first_in_order_print(self, tree):
+        if tree.left is not None:
+            self.depth_first_in_order_print(tree.left)
+        tree.print()
+        if tree.right is not None:
+            self.depth_first_in_order_print(tree.right)
+
+    def depth_first_post_order_print(self, tree):
+        if tree.left is not None:
+            self.depth_first_post_order_print(tree.left)
+        if tree.right is not None:
+            self.depth_first_post_order_print(tree.right)
+        tree.print()

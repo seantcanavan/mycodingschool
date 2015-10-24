@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import unittest
 import DynamicListAsSinglyLinkedList as LinkedList
 # import time

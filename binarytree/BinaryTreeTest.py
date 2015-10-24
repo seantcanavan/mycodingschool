@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import unittest
 import BinaryTree
 
@@ -22,7 +20,14 @@ class MyTestCase(unittest.TestCase):
         btree.add(68)
         btree.add(81)
         btree.add(93)
-        btree.print()
+        print("pre order")
+        btree.print_depth_first_pre_order()
+        print("in order")
+        btree.print_depth_first_in_order()
+        print("post order")
+        btree.print_depth_first_post_order()
+        print("breadth first")
+        btree.print_breadth_first()
 
 
 if __name__ == '__main__':

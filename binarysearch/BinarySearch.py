@@ -1,6 +1,3 @@
-__author__ = 'seancanavan'
-
-
 class BinarySearch:
 
     @staticmethod

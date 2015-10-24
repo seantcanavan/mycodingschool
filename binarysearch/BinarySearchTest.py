@@ -1,5 +1,3 @@
-__author__ = 'seancanavan'
-
 import unittest
 import BinarySearch
 

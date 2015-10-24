@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import unittest
 import DynamicListAsArray
 import random

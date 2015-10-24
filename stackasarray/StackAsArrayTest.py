@@ -1,5 +1,3 @@
-__author__ = 'advoc'
-
 import unittest
 import StackAsArray as Stack
 import random
