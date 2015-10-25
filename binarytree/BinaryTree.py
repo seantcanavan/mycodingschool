@@ -98,3 +98,21 @@ class BinaryTree:
         if tree.right is not None:
             self.depth_first_post_order_print(tree.right)
         tree.print()
+
+    def delete_value(self, node, value):
+        if node is None:
+            return
+        elif value < node.value:
+            node.left = self.delete_value(node.left, value)
+        elif value > node.value:
+            node.right = self.delete_value(node.right, value)
+        else:
+            # case 1 : no child
+            if node.left is None and node.right is None:
+                del node
+            elif node.left is None:
+                print ("left tree empty")
+            elif node.right is None:
+                print ("right tree empty")
+            else:
+                print ("neither tree empty")
