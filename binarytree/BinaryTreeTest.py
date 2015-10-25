@@ -28,7 +28,9 @@ class MyTestCase(unittest.TestCase):
         # btree.print_depth_first_post_order()
         # print("breadth first")
         # btree.print_breadth_first()
-        btree.delete_value(25)
+        btree.print_breadth_first()
+        btree.delete_value(btree.root, 25)
+        btree.print_breadth_first()
 
 if __name__ == '__main__':
     unittest.main()

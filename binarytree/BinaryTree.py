@@ -1,5 +1,6 @@
 import components.TreeNode as Node
 import queueaslinkedlist.QueueAsLinkedList as Queue
+import random
 
 
 class BinaryTree:
@@ -110,9 +111,37 @@ class BinaryTree:
             # case 1 : no child
             if node.left is None and node.right is None:
                 del node
+                return None
             elif node.left is None:
-                print ("left tree empty")
+                current = node
+                node = node.right
+                del current
             elif node.right is None:
-                print ("right tree empty")
+                current = node
+                node = node.left
+                del current
+                return node
             else:
-                print ("neither tree empty")
+                if random.randint(1, 2) == 1:
+                    print("finding min of the max")
+                    replacement_node = self.find_min(node.right)
+                    node.value = replacement_node.value
+                    node.right = self.delete_value(node.right, replacement_node.value)
+                else:
+                    print("finding max of the min")
+                    replacement_node = self.find_max(node.left)
+                    node.value = replacement_node.value
+                    node.left = self.delete_value(node.left, replacement_node.value)
+        return node
+
+    @staticmethod
+    def find_min(node):
+        while node.left is not None:
+            node = node.left
+        return node
+
+    @staticmethod
+    def find_max(node):
+        while node.right is not None:
+            node = node.right
+        return node
