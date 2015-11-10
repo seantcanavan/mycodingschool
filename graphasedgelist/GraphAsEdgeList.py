@@ -30,11 +30,13 @@ class GraphAsEdgeList:
                 return True
         return False
 
+    # O( |e| )
     def print_all_edges(self):
         for x in range(0, self.edge_list.get_size()):
             current = self.edge_list.get_at(x)
             print("start: " + current.start.value + " end: " + current.end.value)
 
+    # O( |v| )
     def print_all_vertices(self):
         for x in range(0, self.vertex_list.get_size()):
             current = self.vertex_list.get_at(x)
